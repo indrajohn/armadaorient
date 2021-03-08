@@ -5,19 +5,56 @@ $this->load->view('header'); ?>
 <body>
     <style>
     .single__slide::before {
-        background: url('https://armadaorient.co/wp-content/uploads/2020/10/bg3.jpg');
         content: "";
         height: 100%;
         left: 0;
         position: absolute;
         top: 0;
         width: 100%;
-        opacity: .6;
 
+    }
+
+    .slide-one::before {
+        content: "";
+        background: url('https://armadaorient.co/wp-content/uploads/2020/10/bg1.jpg');
+        opacity: .7;
+    }
+
+    .slide-two::before {
+        content: "";
+        background: url('https://armadaorient.co/wp-content/uploads/2020/10/bg2.jpg');
+        opacity: .7;
+    }
+
+    .single__slide::after {
+        animation-name: example;
+        animation-duration: 4s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes example {
+        from {
+            transform: scale(0) translate(0px, 0px);
+        }
+
+        to {
+            transform: scale(3) translate(-659px, 0px);
+        }
     }
 
     section {
         height: 100vh;
+        scroll-snap-align: start;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
     }
     </style>
 
@@ -33,7 +70,7 @@ $this->load->view('header'); ?>
             <div class="slider__container slider--one bg__cat--3">
                 <div class="slide__container slider__activation__wrap owl-carousel">
                     <!-- Start Single Slide -->
-                    <div class="single__slide animation__style01 slider__fixed--height">
+                    <div class="single__slide animation__style01 slider__fixed--height slide-one">
                         <div class="container">
                             <div class="row align-items__center">
                                 <div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
@@ -54,11 +91,19 @@ $this->load->view('header'); ?>
                                 </div>
                             </div>
                         </div>
+                        <div style="position:absolute;bottom:0;left:50%;">
+                            <div class="cr__btn" style=" display: flex;align-items: center;">
+                                <a href="#product" style="background:initial;height: 100px;">Explore <img
+                                        src=" https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" style="height:30px;width:10px;  margin-left: auto;
+  margin-right: auto;
+  display: block;" /></a>
+                            </div>
+                        </div>>
                     </div>
                     <!-- End Single Slide -->
                     <!-- Start Single Slide -->
-                    <div class="single__slide animation__style01 slider__fixed--height">
-                        <div class="container">
+                    <div class="single__slide animation__style01 slider__fixed--height slide-two">
+                        <div class="container" style="position:relative">
                             <div class="row align-items__center">
                                 <div class="col-md-7 col-sm-7 col-xs-12 col-lg-6">
                                     <div class="slide">
@@ -78,14 +123,23 @@ $this->load->view('header'); ?>
                                 </div>
                             </div>
                         </div>
+                        <div style="position:absolute;bottom:0;left:50%;">
+                            <div class="cr__btn" style=" display: flex;align-items: center;">
+                                <a href="#product" style="background:initial;height: 100px;">Explore <img
+                                        src=" https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" style="height:30px;width:10px;  margin-left: auto;
+  margin-right: auto;
+  display: block;" /></a>
+                            </div>
+                        </div>
                     </div>
                     <!-- End Single Slide -->
                 </div>
             </div>
+
         </section>
         <!-- Start Slider Area -->
         <!-- Start Category Area -->
-        <section class="htc__category__area ptb--100">
+        <section id="product" class="htc__category__area ptb--100">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
