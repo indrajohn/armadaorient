@@ -53,8 +53,26 @@ $this->load->view('header'); ?>
 
     html {
         scroll-behavior: smooth;
-        scroll-snap-type: mandatory;
-        scroll-snap-points-y: repeat(100vh);
+    }
+
+    .exploreBtn {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+    }
+
+    .exploreBtn>.cr__btn>a {
+        background: initial;
+        height: 100px;
+
+    }
+
+    .exploreBtn>.cr__btn>a>img {
+        height: 30px;
+        width: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
     </style>
 
@@ -91,14 +109,13 @@ $this->load->view('header'); ?>
                                 </div>
                             </div>
                         </div>
-                        <div style="position:absolute;bottom:0;left:50%;">
-                            <div class="cr__btn" style=" display: flex;align-items: center;">
-                                <a href="#product" style="background:initial;height: 100px;">Explore <img
-                                        src=" https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" style="height:30px;width:10px;  margin-left: auto;
-  margin-right: auto;
-  display: block;" /></a>
+                        <div class="exploreBtn">
+                            <div class="cr__btn">
+                                <a href="#" id="explore">Explore
+                                    <img src="https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" />
+                                </a>
                             </div>
-                        </div>>
+                        </div>
                     </div>
                     <!-- End Single Slide -->
                     <!-- Start Single Slide -->
@@ -123,12 +140,11 @@ $this->load->view('header'); ?>
                                 </div>
                             </div>
                         </div>
-                        <div style="position:absolute;bottom:0;left:50%;">
-                            <div class="cr__btn" style=" display: flex;align-items: center;">
-                                <a href="#product" style="background:initial;height: 100px;">Explore <img
-                                        src=" https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" style="height:30px;width:10px;  margin-left: auto;
-  margin-right: auto;
-  display: block;" /></a>
+                        <div class="exploreBtn">
+                            <div class="cr__btn">
+                                <a href="#" id="explore">Explore
+                                    <img src=" https://armadaorient.co/wp-content/uploads/2020/10/arrowdown.png" />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -352,7 +368,17 @@ $this->load->view('header'); ?>
         <!-- End Product Area -->
     </div>
     <!-- Body main wrapper end -->
+    <script>
+    $("#explore").on('click', function() {
+        window.scrollTo({
+            top: 900,
+            behavior: 'smooth'
+        });
+
+    });
+    </script>
 
     <!-- Placed js at the end of the document so the pages load faster -->
     <?php
-$this->load->view('footer'); ?>
+        $this->load->view('footer'); 
+    ?>
