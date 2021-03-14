@@ -34,12 +34,9 @@
 
 .main__menu {
     background-color: rgb(79, 60, 27);
+    box-shadow: 0em 0.15em 2em rgb(0 0 0 / 15%);
     font-size: 1em;
     color: rgb(255, 255, 255);
-}
-
-.sticky__header.scroll-header {
-    background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
 }
 
 .main__menu>li>a {
@@ -65,10 +62,6 @@
 .main__menu {
     justify-content: left;
 }
-
-.owl-item {}
-
-.owl-item:before {}
 </style>
 
 <div class="toolbartes">
@@ -87,7 +80,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-lg-7 col-md-6 col-sm-8 col-xs-8">
+                        <div class="col-lg-7 col-md-6 col-sm-7 col-xs-7">
                             <div class="toolbar-center">
                                 <img src="assets/images/logo/logo.png" />
                             </div>
@@ -111,6 +104,7 @@
                                 <ul>
                                     <li><a href="<?php echo base_url();?>">Home</a> </li>
                                     <li><a href="product-grid">Products</a></li>
+                                    <li><a href="about-us">About Us</a> </li>
                                     <li><a href="contact">contact</a></li>
 
                                     <!--<li><a href="<?php echo base_url();?>">Home</a></li>
@@ -157,6 +151,7 @@
                         <ul class="main__menu">
                             <li style="margin-left:70px;"><a href="<?php echo base_url();?>">Home</a> </li>
                             <li><a href="product-grid">Products</a></li>
+                            <li><a href="about-us">About Us</a> </li>
                             <li><a href="contact">contact</a></li>
 
                         </ul>

@@ -44,7 +44,10 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('contact');
 	}
-
+	public function about_us()
+	{
+		$this->load->view('about-us');
+	}
 	public function product_details()
 	{
 		$id = $this->input->get('product_id');

@@ -57,6 +57,7 @@ $route['translate_uri_dashes'] = FALSE;
 //routes
 $route['blog-details'] = 'home/blog_details';
 $route['blog'] = 'home/blog';
+$route['about-us'] = 'home/about_us';
 $route['cart'] = 'CartController/cart';
 $route['deleteCartByID'] = 'CartController/deleteCartByID';
 $route['updateTotalProduct'] = 'CartController/updateTotalProduct';

@@ -101,6 +101,7 @@
     var win = $(window);
     var sticky_id = $("#sticky-header-with-topbar");
     win.on('scroll', function() {
+        sticky_id.addClass("scroll-header");
         var scroll = win.scrollTop();
         if (scroll < 245) {
             sticky_id.removeClass("scroll-header");
