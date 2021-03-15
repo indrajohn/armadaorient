@@ -27,8 +27,13 @@
         font-family: "Montserrat", sans-serif
     }
 
+    .containerOne1 .flex1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .about-info {
-        background-color: hsl(0, 0%, 94%)
+        background-color: hsl(0, 0%, 94%);
     }
     </style>
     <div class="wrapper">
@@ -55,53 +60,68 @@
         <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-sm-6 col-md-6 about-info text-justify">
-                        <h1>About Armada Orient</h1>
-                        <hr />
-                        <p class="text-justify">
-                            Our company is small and personal. Our aim is to give the best possible service that we can,
-                            solving your supply problems so that you can concentrate on the job of selling.</p>
-                        <p>
-                            We are based in Solo (also known as Surakarta) in Central Java.</p>
-                        <p> This beautiful old city is a major centre for Indonesian furniture production. It is also
-                            the birthplace of Javanese culture and is very inexpensive and laid back. There is a lot to
-                            see and do around Solo – old palaces, a wonderful antique market, ancient temples, mountain
-                            climbing, shopping for batik and handicrafts.</p>
-                        <p> Our main product lines are antiques, recycled timber production, handicrafts and building
-                            materials. We also have good contacts for many other items : pottery, glassware, ironwork,
-                            lighting, upholstery. You name it, and we can find it.</p>
+                    <div class="col-lg-6 col-sm-6 col-md-6 ">
+                        <div class="about-info text-justify">
+                            <h1>About Armada Orient</h1>
+                            <hr />
+                            <p>
+                                Our company is small and personal. Our aim is to give the best possible service that we
+                                can,
+                                solving your supply problems so that you can concentrate on the job of selling.</p>
+                            <p>
+                                We are based in Solo (also known as Surakarta) in Central Java.</p>
+                            <p> This beautiful old city is a major centre for Indonesian furniture production. It is
+                                also
+                                the birthplace of Javanese culture and is very inexpensive and laid back. There is a lot
+                                to
+                                see and do around Solo – old palaces, a wonderful antique market, ancient temples,
+                                mountain
+                                climbing, shopping for batik and handicrafts.</p>
+                            <p> Our main product lines are antiques, recycled timber production, handicrafts and
+                                building
+                                materials. We also have good contacts for many other items : pottery, glassware,
+                                ironwork,
+                                lighting, upholstery. You name it, and we can find it.</p>
 
-                        </p>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-sm-6 col-md-6 d-flex justify-content-end">
-                        <img src="assets/images/map.jpg" />
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <img src="assets/images/map.jpg" style="display:table-cell;vertical-align: bottom" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <div class="about-info text-justify">
+                            <img src="assets/images/about1.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6">
+                        <div class="about-info text-justify">
+                            <p>
+                                C.V. Armada Orient was established in Solo in 1999. Initially we were mainly a buying
+                                office for Australian customers, with the emphasis in early days on cheap mahogany
+                                furniture and handicrafts.</p>
+                            <p>
+                                Within a few very short years however we evolved. Our plan was to sell better quality
+                                kiln-dried product. We built our own kilns, instituted more rigorous quality control and
+                                tried in every way to improve our product. We started doing our own production. And we
+                                worked closely with our customers, asking them for feed-back and suggestions.</p>
+                            <p> Our market area changed too – soon we were selling to Europe, then US, Asia, and the
+                                Middle East. These days, we have buyers spread out all over the world. And many of them
+                                have been loyal customers for years and years.</p>
+                            <p>Today has 20 years experience manufacturing, sourcing, and exporting goods. And along the
+                                way we have made good friends with a lot of wonderful people around the world.</p>
+
+                            </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="d-flex flex-column">
-                <div class="p-2">Flex item 1</div>
-                <div class="p-2">Flex item 2</div>
-                <div class="p-2">Flex item 3</div>
-            </div>
-            <div class="d-flex flex-column-reverse">
-                <div class="p-2">Flex item 1</div>
-                <div class="p-2">Flex item 2</div>
-                <div class="p-2">Flex item 3</div>
-            </div>
-
         </section>
     </div>
     <!-- Body main wrapper end -->
 
     <!-- Placed js at the end of the document so the pages load faster -->
-    <script>
-    $(":input").bind('keyup mouseup', function() {
-        var index = $(this).closest('tr').index();
-        var total = price * this.value;
-        var total_cart = <?php echo $price_all = 0 ?> + total;
-        var htmltes = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ",00";
-        var idTotal = '#price_total' + index;
-        $(this).parents().find(idTotal).html(htmltes);
-    });
-    </script>
     <?php $this->load->view('footer'); ?>
