@@ -43,7 +43,28 @@ class Home extends CI_Controller {
 	public function contact()
 	{
 		$this->load->view('contact');
+		//$this->sendMail();
 	}
+	
+	public function sendMail()
+	{
+		
+		$this->load->library('email');
+		$config['protocol'] = 'sendmail';
+		$config['mailpath'] = '/usr/sbin/sendmail';
+		$config['charset'] = 'iso-8859-1';
+		$config['wordwrap'] = TRUE;
+		$this->email->initialize($config);
+		$this->email->from('indrajohn2@gmail.com', 'Your Name');
+		$this->email->to('indrajohn2@gmail.com');
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');
+
+		$this->email->send();
+
+	}
+	
 	public function about_us()
 	{
 		$this->load->view('about-us');
