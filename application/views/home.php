@@ -406,9 +406,14 @@ $this->load->view('header'); ?>
                                     <div class='fr__product__inner'>
                                         <h4><a href='product-details'>".$produk['nama_produk']."</a></h4>
                                         <ul class='fr__pro__prize'>
-                                            <li class='old__prize'><strike>" .Home::rupiah($produk['harga_produk']) ."</strike></li>
-                                            <li>".$pricetotal."</li>
-                                        </ul>
+                                                    <li class='old__prize'>";
+                                                    if($produk['discount'] != 0 ){
+                                                        echo "<strike>".Home::rupiah($produk['harga_produk'])."</strike>";
+                                                    }
+                                                        echo "</li>
+                                                </ul><ul class='fr__pro__prize'>
+                                                <li>".$pricetotal."</li>
+                                            </ul>
                                     </div>
                                 </div>
                             </div>";
@@ -419,25 +424,26 @@ $this->load->view('header'); ?>
 				</div>
 			</div>
 		</section>
-		<!-- Start Product Area -->
+		<!-- Start Product Area 
 		<section id="section-four" class="section-four htc__category__area ptb--100">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="section__title--2 text-center">
 							<h2 class="title__line">Best Seller</h2>
-							<!--<p>But I must explain to you how all this mistaken idea</p>-->
+							<!--<p>But I must explain to you how all this mistaken idea</p>
 						</div>
 					</div>
 				</div>
+				<!--
 				<div class="row">
 					<div class="product__wrap clearfix">
-						<!-- Start Single Category -->
+						<!-- Start Single Category 
 						<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 							<div class="category">
 								<div class="ht__cat__thumb">
 									<a href="product-details">
-										<!--<img src="assets/images/product/9.jpg" alt="product images">-->
+										<!--<img src="assets/images/product/9.jpg" alt="product images">
 										<img src="assets/images/slider/fornt-img/meja_lesehan.png" alt="product images">
 
 									</a>
@@ -461,12 +467,12 @@ $this->load->view('header'); ?>
 							</div>
 						</div>
 						<!-- End Single Category -->
-						<!-- Start Single Category -->
+		<!-- Start Single Category 
 						<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 							<div class="category">
 								<div class="ht__cat__thumb">
 									<a href="product-details">
-										<!--<img src="assets/images/product/10.jpg" alt="product images">-->
+										<!--<img src="assets/images/product/10.jpg" alt="product images">
 										<img src="assets/images/slider/fornt-img/meja.png" alt="product images">
 
 									</a>
@@ -489,40 +495,42 @@ $this->load->view('header'); ?>
 								</div>
 							</div>
 						</div>
-						<!-- End Single Category -->
-						<!-- Start Single Category -->
-						<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
-							<div class="category">
-								<div class="ht__cat__thumb">
-									<a href="product-details">
-										<!--<img src="assets/images/product/11.jpg" alt="product images">-->
-										<img src="assets/images/slider/fornt-img/kursi.png" alt="product images">
-									</a>
-								</div>
-								<div class="fr__hover__info">
-									<ul class="product__action">
-										<li><a href="wishlist"><i class="icon-heart icons"></i></a></li>
+						<!-- End Single Category
+		<!-- Start Single Category 
+		<section>
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
+			<div class="category">
+				<div class="ht__cat__thumb">
+					<a href="product-details">
+						<!--<img src="assets/images/product/11.jpg" alt="product images">
+						<img src="assets/images/slider/fornt-img/kursi.png" alt="product images">
+					</a>
+				</div>
+				<div class="fr__hover__info">
+					<ul class="product__action">
+						<li><a href="wishlist"><i class="icon-heart icons"></i></a></li>
 
-										<li><a href="cart"><i class="icon-handbag icons"></i></a></li>
+						<li><a href="cart"><i class="icon-handbag icons"></i></a></li>
 
-										<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
-									</ul>
-								</div>
-								<div class="fr__product__inner">
-									<h4><a href="product-details">Wooden Dining Chair</a></h4>
-									<ul class="fr__pro__prize">
-										<li class="old__prize"><strike>Rp. 1.500.000,00</strike></li>
-										<li>Rp. 965.000,00</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<!-- End Single Category -->
-
-					</div>
+						<li><a href="#"><i class="icon-shuffle icons"></i></a></li>
+					</ul>
+				</div>
+				<div class="fr__product__inner">
+					<h4><a href="product-details">Wooden Dining Chair</a></h4>
+					<ul class="fr__pro__prize">
+						<li class="old__prize"><strike>Rp. 1.500.000,00</strike></li>
+						<li>Rp. 965.000,00</li>
+					</ul>
 				</div>
 			</div>
-		</section>
+		</div> -->
+
+		<!-- End Single Category 
+
+	</div>
+	</div>
+	</div>
+	</section>-->
 		<section id="section-five" class="section-five">
 			<div class="container-for-text">
 				<div class="video-player-container">
@@ -565,10 +573,9 @@ $this->load->view('header'); ?>
 		$("#explore2").on('click', function () {
 			event.stopPropagation();
 			var height = $("#section-one").height();
-			var height2 = $("#section-two");
 			if (height >= 800) {
 				window.scrollTo({
-					top: height2,
+					top: 700,
 					behavior: 'smooth'
 				});
 			}
