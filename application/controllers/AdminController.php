@@ -4,10 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class AdminController extends CI_Controller {
 	public $debug;
 	public $upload_path;
-	// public function index()
-	// {
-	// 	//$this->load->view('admin/overview');
-	// }
 
 	function __construct() {
 		parent::__construct();
@@ -18,12 +14,9 @@ class AdminController extends CI_Controller {
 
 		$this->load->model('admin/ProductAdmin');
 		$this->load->model('admin/CategoryAdmin');
-	 }
+	}
     public function index()
 	{
-		// $this->load->model('Product_Model');
-
-		// $data['data'] = $this->Product_Model->getProduk();
 		$this->login();
     }
     public function dashboard(){
@@ -43,10 +36,7 @@ class AdminController extends CI_Controller {
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            = $nama;
         $config['overwrite']			= true;
-        $config['max_size']             = 5000; // 1MB
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
-
+        $config['max_size']             = 5000; 
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
@@ -72,7 +62,7 @@ class AdminController extends CI_Controller {
 			$categoryName = $this->input->post("categoryname");
 			$this->debug->debug($categoryName);
 			$data = array(
-				"nama" => $categoryName
+				"name" => $categoryName
 			  );
 			  $this->CategoryAdmin->insertCategory($data);
 
@@ -90,7 +80,7 @@ class AdminController extends CI_Controller {
 			$id =$this->input->post('id');
 			$categoryName = $this->input->post("categoryname");
 			$dataUpdated = array(
-				"nama" => $categoryName
+				"name" => $categoryName
 			);
 			$this->CategoryAdmin->editCategory($id,$dataUpdated);
 
@@ -136,13 +126,13 @@ class AdminController extends CI_Controller {
 			$url_photo = $this->_uploadImage($productName,$this->upload_path);
 
 			$data = array(
-				"nama_produk" => $productName ,
-				"harga_produk" => $price ,
-				"id_kategori" => $category ,
-				"discount" => $discount ,
-				"stock" => $stock,
-				"produk_desk" => $product_desc ,
-				'url_produk' => $url_photo
+				"product_name" => $productName ,
+				"product_price" => $price ,
+				"category_id" => $category ,
+				"product_discount" => $discount ,
+				"product_stock" => $stock,
+				"product_desc" => $product_desc ,
+				'product_url' => $url_photo
 			  );
 			  $this->ProductAdmin->insertProduct($data);
 
@@ -181,13 +171,13 @@ class AdminController extends CI_Controller {
 			}
 			$this->debug->debug($url_photo);
 			$dataUpdated = array(
-				"nama_produk" => $productName ,
-				"harga_produk" => $price ,
-				"produk_desk" => $product_desc ,
-				"discount" => $discount ,
-				"id_kategori" => $category ,
-				"stock" => $stock,
-				'url_produk' => $url_photo
+				"product_name" => $productName ,
+				"product_price" => $price ,
+				"product_desc" => $product_desc ,
+				"product_discount" => $discount ,
+				"category_id" => $category ,
+				"product_stock" => $stock,
+				'product_url' => $url_photo
 			  );
 			  $this->ProductAdmin->editProduct($id,$dataUpdated);
 

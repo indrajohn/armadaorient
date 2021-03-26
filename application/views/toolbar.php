@@ -81,6 +81,10 @@
 		width: 2px;
 	}
 
+	.header__account li {
+		list-style-type: none;
+	}
+
 </style>
 
 <div class="toolbartes">
@@ -99,12 +103,12 @@
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-7 col-md-6 col-sm-7 col-xs-7">
+						<div class="col-lg-6 col-md-5 col-sm-6 col-xs-5">
 							<div class="toolbar-center">
 								<img src="assets/images/logo/logo.png" />
 							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
+						<div class="col-lg-3 col-md-3 col-sm-5 col-xs-7">
 							<div class="header__right toolbar-center">
 								<div class="header__search search search__open">
 									<a href="#"><i class="icon-magnifier icons"></i></a>
@@ -115,22 +119,22 @@
                                     if($username != NULL){
                                         echo "
 										<div class='header__account'>
-										<li class='nav-item dropdown' style=''>
-										<a id='navbarDropdown' class='nav-link dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' v-pre>
-											Hai<span class='caret'></span>
-										</a>
-				
-										<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-											<a class='dropdown-item' href='logout'>
-												Log Out
-											</a>
-										</div>
-										</li>
-										</div>
-										<div class='htc__shopping__cart'>
-                                        <a class='cart__menu' href='#'><i class='icon-handbag icons'></i></a>
-                                        <a href='#'><span class='htc__qua'>2</span></a>
-                                    </div>";
+											<div class='nav-item dropdown'>
+												<a id='navbarDropdown' class='nav-link dropdown-toggle' href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' v-pre>
+													Hai <span class='caret'></span>
+												</a>
+					
+												<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
+													<a class='dropdown-item' href='logout'>
+														Log Out
+													</a>
+												</div>
+											</div>
+											</div>
+											<div class='htc__shopping__cart'>
+											<a class='cart__menu' href='#'><i class='icon-handbag icons'></i></a>
+											<a href='#'><span class='htc__qua'>2</span></a>
+                                    	</div>";
                                     }
 									else{
 										echo "<div class='header__account_non_active' style='background:initial'>

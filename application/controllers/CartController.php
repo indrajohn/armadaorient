@@ -39,7 +39,7 @@ class CartController extends CI_Controller {
 			redirect('login');
 		}
 		else{
-			$id =$this->input->post('id_product');
+			$id =$this->input->post('product_id');
 			$this->Cart->deleteCartByID($username,$id);
 			redirect('cart');
 		}
@@ -53,8 +53,8 @@ class CartController extends CI_Controller {
 			redirect('login');
 		}
 		else{
-			$id =$this->input->post('id_product');
-			$total_product =$this->input->post('total_product');
+			$id =$this->input->post('product_id');
+			$total_product =$this->input->post('product_total');
 			$this->debug->debug($id);
 			$this->debug->debug($total_product);
 			$this->Cart->updateTotalProduct($username,$id);
@@ -69,14 +69,14 @@ class CartController extends CI_Controller {
 			redirect('login');
 		}
 		else{
-			$id =$this->input->post('id_product');
+			$id =$this->input->post('product_id');
 			$isInCart = $this->Cart->getCountCart($username,$id);
 			$this->debug->debug($isInCart);
 			if($isInCart == 0){
 				$data = array(
-					"id_user" => $user->id ,
-					"id_produk" => $id ,
-					"total_produk" => '1'
+					"user_id" => $user->id ,
+					"product_id" => $id ,
+					"product_total" => '1'
 				);
 				$this->Cart->addCart($data);
 			}

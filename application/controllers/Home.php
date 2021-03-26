@@ -16,12 +16,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-
 		$data['data'] = $this->ProductAdmin->getProduct();
-		/*foreach ($data as $produk) {
-			echo "Nama : ".$produk['nama_produk']."<br/>";
-			echo "Alamat : ".$produk['url_produk']."<hr/>";
-		}*/
 		$this->load->view('home',$data);
 	}
 	public static function rupiah($angka){

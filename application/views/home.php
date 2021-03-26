@@ -384,14 +384,14 @@ $this->load->view('header'); ?>
 							<?php
 
                             foreach ($data as $produk) {
-                                $price_total = $produk['harga_produk'] - ($produk['harga_produk'] * ($produk['discount']/100));
+                                $price_total = $produk['product_price'] - ($produk['product_price'] * ($produk['product_discount']/100));
                                 $pricetotal = Home::rupiah($price_total);
 
                                 echo "<div class='col-md-4 col-lg-4 col-sm-4 col-xs-12'>
                                 <div class='category'>
                                     <div class='ht__cat__thumb'>
                                         <a href='product-details'>
-                                            <img src='upload/product/".$produk['url_produk']."' alt='product images' style='height: auto !important;width: 100% !important;'>
+                                            <img src='upload/product/".$produk['product_url']."' alt='product images' style='height: auto !important;width: 100% !important;'>
                                         </a>
                                     </div>
                                     <div class='fr__hover__info'>
@@ -404,11 +404,11 @@ $this->load->view('header'); ?>
                                         </ul>
                                     </div>
                                     <div class='fr__product__inner'>
-                                        <h4><a href='product-details'>".$produk['nama_produk']."</a></h4>
+                                        <h4><a href='product-details'>".$produk['product_name']."</a></h4>
                                         <ul class='fr__pro__prize'>
                                                     <li class='old__prize'>";
-                                                    if($produk['discount'] != 0 ){
-                                                        echo "<strike>".Home::rupiah($produk['harga_produk'])."</strike>";
+                                                    if($produk['product_discount'] != 0 ){
+                                                        echo "<strike>".Home::rupiah($produk['product_price'])."</strike>";
                                                     }
                                                         echo "</li>
                                                 </ul><ul class='fr__pro__prize'>
